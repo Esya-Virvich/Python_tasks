@@ -1,0 +1,14 @@
+def multiply_by_two(func):
+    
+    def wrapper(*args, **kwargs):
+        result = func(*args, **kwargs)
+        result *= 2
+        return result
+    return wrapper
+
+def my_func(x):
+    return x + 4
+number_for_funk = int(input("Number for funk - "))
+decorated_func = multiply_by_two(my_func)
+result = decorated_func(number_for_funk)
+print(result)
